@@ -24,16 +24,39 @@ class cliente{
     }
     $objetoMYSQL->close();
 }
-     function obtenerClientes(){
+  function mostrarCliente(){
+    
         //incorporamos la clase de coneexion
         include("/var/www/html/crm/conexiones/mysql.inc.php");
         //creamos query que nos permitira obtener toso los datos de la tabla clientes
-        $consultaSql    = "SELECT * FROM cliente";
+        $consultaSql    = "SELECT * FROM cliente ";
         if($resultado = $objetoMYSQL->query($consultaSql)){
             if($objetoMYSQL->affected_rows>0){
                 $i=0;
                 while($fila = $resultado->fetch_assoc()){
-                    $arreglo[$i]=array($fila['rut_cliente'],$fila['nombres'],$fila['apellidos'],$fila['email'],$fila['celular'],$fila['fono_fijo'],$fila['fecha_actualizacion']);
+                    $arreglo[$i]=array($fila['rut_cliente'],$fila['nombres'],$fila['apellidos'],$fila['email'],$fila['celular'],$fila['fono_fijo']);
+                    $i++;
+                }
+                return $arreglo;
+            }else{
+                echo"No se encontrarón datos.";
+            }
+        }else{
+            echo"No fué posible ejecutar la consulta".$objetoMYSQL->error;
+        }
+        $objetoMYSQL->close();
+    }
+     function obtenerClientes($rut){
+         $var_rut = $rut;
+        //incorporamos la clase de coneexion
+        include("/var/www/html/crm/conexiones/mysql.inc.php");
+        //creamos query que nos permitira obtener toso los datos de la tabla clientes
+        $consultaSql    = "SELECT rut_cliente, nombres, apellidos FROM cliente where rut_cliente='$var_rut'";
+        if($resultado = $objetoMYSQL->query($consultaSql)){
+            if($objetoMYSQL->affected_rows>0){
+                $i=0;
+                while($fila = $resultado->fetch_assoc()){
+                    $arreglo[$i]=array($fila['rut_cliente'],$fila['nombres'],$fila['apellidos']);
                     $i++;
                 }
                 return $arreglo;

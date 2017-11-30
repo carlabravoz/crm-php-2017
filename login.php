@@ -30,6 +30,8 @@ if($var_resultado==1){
   $_SESSION["ses_rut_usuario"]       =    $var_rut;
   $_SESSION["ses_nombres_usuario"]    =   $var_nombres;
   $_SESSION["ses_apellidos_usuario"]  =   $var_apellidos;
+  //creamos variabl para controlar sesion
+  $_SESSION["ses_validado"]    = 1;
   //Redireccionamos
  header("Location:app/crm.php");
 }else{

@@ -38,5 +38,41 @@ function obtenerTipoGestion(){
         }
         $objetoMYSQL->close();
     }
+    function eliminarTipoGestion($id_tipo_gestion){
+    $var_id_tipo_gestion = $id_tipo_gestion;
+    //incorporamos la clase de conexion
+   include("/var/www/html/crm/conexiones/mysql.inc.php");
+   //creamos query que nos permitira la eliminacion del cliente mediante su id
+    $eliminar  = "DELETE FROM tipo_gestion WHERE id_tipo_gestion='$var_id_tipo_gestion'";
+    if($objetoMYSQL->query($eliminar)==TRUE){
+    return 1;
+
+    }else{
+       //return 0;
+        echo $objetoMYSQL->error;
+    }
+    $objetoMYSQL->close();
+       }  
+       
+       function actualizarTipoGestion($id_tipo_gestion,$nombre){
+           $var_id_tipo_gestion       = $id_tipo_gestion;
+           $var_nombre                = $nombre;
+          
+           //incorporamos la clase de conexion
+      include("/var/www/html/crm/conexiones/mysql.inc.php");
+      //creamos query para actualizar datos 
+      $actualizar    = "UPDATE tipo_gestion SET nombre_tipo_gestion = '$var_nombre'
+       WHERE id_tipo_gestion='$var_id_tipo_gestion'";
+    if($objetoMYSQL->query($actualizar)==TRUE){
+        return 1;
+
+    }else{
+       // return 0;
+      echo $objetoMYSQL->error;
+    
+    }
+     $objetoMYSQL->close();
+       }
 }
+
 ?>

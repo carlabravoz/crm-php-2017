@@ -1,5 +1,6 @@
 <?php
 ini_set("display_errors", 1);
+session_start();
 //capturamos datos mediante metodo GET
 $var_id_gestion          = $_GET["id_gestion"];
 $var_rut_usuario         = $_GET["rut_usuario"];
@@ -21,7 +22,9 @@ $var_comentarios         = $_GET["comentarios"];
 </head>
 
 <body>
+    <?php include("../../plantillas/encabezado.inc.php");?>
 <!--<div class="ui disabled input">-->
+    <div class="ui segment">
 <form name="frm_actualizar" action="actualizar-dml.php" method="post" class="ui form">
 <div class="ui grid centered">
 <div class="ui segment">
@@ -55,6 +58,13 @@ $var_comentarios         = $_GET["comentarios"];
 </tbody>
 </table>
 </form>
+</div>
+</div>
+</div>
+<footer>
+   <?php include("../../plantillas/pie-pagina.inc.php");?>
+        </footer>
+        
 <script language="javascript">
 $('.ui.form')
 .form({

@@ -1,21 +1,20 @@
-
 <?php
 
 ini_set("display_errors",1);
 //incorporamos la clase cliente
-include("../../clases/cliente.class.php");
+include("../../clases/usuario.class.php");
 //creamos el objeto de la clase
-   $obj_cliente = new cliente();
+   $obj_usuario = new usuario();
 
    //capturamos la id del cliente
-   $var_rut_cliente = $_GET["rut_cliente"];
+   $var_rut_usuario = $_GET["rut_usuario"];
    
    //ejecutamos la funcion eliminar 
-   $var_resultado = $obj_cliente->eliminarCliente($var_rut_cliente);
+   $var_resultado = $obj_usuario->eliminarUsuario($var_rut_usuario);
    if($var_resultado==1){
-     echo "cliente eliminado";
+     echo "usuario eliminado";
    }else{
-    echo "El cliente tiene una gestion asociada";
+    echo "El usuario tiene una gestion asociada";
   
 
   }

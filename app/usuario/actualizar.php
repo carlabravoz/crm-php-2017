@@ -4,12 +4,12 @@ ini_set("display_errors", 1);
 //activamos la sesion
 session_start();
 //capturamos los datos desde la url
-$var_rut_cliente    = $_GET["rut_cliente"];
+$var_rut_usuario    = $_GET["rut_usuario"];
 $var_nombres        = $_GET["nombres"];
 $var_apellidos      = $_GET["apellidos"];
 $var_email          = $_GET["email"];
-$var_celular        = $_GET["celular"];
-$var_fono_fijo      = $_GET["fono_fijo"];
+$var_clave        = $_GET["clave"];
+
 
 ?>
 
@@ -27,26 +27,25 @@ $var_fono_fijo      = $_GET["fono_fijo"];
 <form name="frm_actualizar" action="actualizar-dml.php" method="post" class="ui form">
 <div class="ui grid centered">
 <div class="ui segment">
-<h3 class="ui block header">Actualizar Cliente</h3>
+<h3 class="ui block header">Actualizar Usuario</h3>
 <table class="ui collapsing table" class="center aligned">
    <thead>
-      <th>RUT CLIENTE</th>
+      <th>RUT USUARIO</th>
         <th>NOMBRES</th>
           <th>APELLIDOS</th>
             <th>EMAIL</th>
-              <th>CELULAR</th>
-                <th>FONO FIJO</th>
+              <th>CLAVE</th>
+               
    </thead>
 
 <tbody>
 <tr>
 <!--llenamos las cajas de texto con los datos obtenidos de la tabla-->
-<td><div class="ui disabled input"><input type="text" name="hdn_rut_cliente" value="<?php echo $var_rut_cliente;?>"></div></td>
+<td><div class="ui disabled input"><input type="text" name="hdn_rut_usuario" value="<?php echo $var_rut_usuario;?>"></div></td>
 <td><div class="field"><input type="text" name="txt_nombres" value="<?php echo $var_nombres;?>"></td>
 <td><div class="field"><input type="text" name="txt_apellidos" value="<?php echo $var_apellidos;?>"></td>
 <td><div class="field"><input type="text" name="txt_email" value="<?php echo $var_email;?>"></td>
-<td><div class="field"><input type="text" name="txt_celular" value="<?php echo $var_celular;?>"></td>
-<td><div class="field"><input type="text" name="txt_fono_fijo" value="<?php echo $var_fono_fijo;?>"></td>
+<td><div class="field"><input type="text" name="txt_clave" value="<?php echo $var_clave;?>"></td>
 </tr>
 
 <tr>

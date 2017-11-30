@@ -5,7 +5,7 @@ session_start();
 
 <html>
 <head>
-<title>Agregar Cliente</title>
+<title>Agregar usuario</title>
 <script src="../../js/jquery-3.2.1.min.js"></script>
 <script src="../../semantic/semantic.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../../semantic/semantic.min.css" >
@@ -15,31 +15,31 @@ session_start();
 <?php include("../../plantillas/encabezado.inc.php");?>
     
     <div class="ui segment">
-    <form name ="frm_agregar_cliente" action="agregar-dml.php" method="post" class="ui form">
+    <form name ="frm_agregar_usuario" action="agregar-dml.php" method="post" class="ui form">
         
     <div class="ui grid centered">
     <div class="ui segment">
          
-        <h3 class="ui block header">AGREGAR CLIENTE<i class="add circle icon"></i></h3> 
+        <h3 class="ui block header">AGREGAR USUARIO<i class="add circle icon"></i></h3> 
        
         <table class="collapsing table" class="center aligned">
             <thead>
-                <th>RUT CLIENTE</th>
+                <th>RUT USUARIO</th>
                 <th>NOMBRES</th>
                 <th>APELLIDOS</th>
                 <th>EMAIL</th>
-                <th>CELULAR</th>
-                <th>FONO FIJO</th>
+                <th>CLAVE</th>
+               
             <thead>  
             
             <tbody>
                 <tr>
-                 <td><div class="field"><div class="ui mini input"><input type="text" name="txt_rut_cliente"></div></td>
+                 <td><div class="field"><div class="ui mini input"><input type="text" name="txt_rut_usuario"></div></td>
                  <td><div class="field"><div class="ui mini input"><input type="text" name="txt_nombres"></div></td>
                  <td><div class="field"><div class="ui mini input"><input type="text" name="txt_apellidos"></div></td>
                  <td><div class="field"><div class="ui mini input"><input type="text" name="txt_email"></div></td>
-                 <td><div class="field"><div class="ui mini input"><input type="text" name="txt_celular"></div></td>
-                 <td><div class="field"><div class="ui mini input"><input type="text" name="txt_fono_fijo"></div></td>
+                 <td><div class="field"><div class="ui mini input"><input type="text" name="txt_clave"></div></td>
+
 
                  <tr>
                 <td><button class="ui primary basic button"><a href="../crm.php">Atrás <i class="reply all icon"></i></button></td> 

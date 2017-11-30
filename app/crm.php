@@ -11,7 +11,9 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../semantic/semantic.min.css" >
 </head>
 <body>
-
+<?php include("../plantillas/encabezado.inc.php");?>
+       
+<div class="ui segment">
 <div class="ui segment">
 <h3 class="ui block header">Selecione Opcion  <i class="options icon"></i></h3> 
 <img class="ui avatar image" src="../img/user.jpg">
@@ -56,11 +58,24 @@ session_start();
   </div>
 </div>
   </div>
+
+
+  
   <div class="ui segment">
   <div class="ui grid centered">
-    <img class="disabled fluid ui image" src="../img/nube.jpg">
+  
+    <!--<img class="disabled fluid ui image" src="../img/nube.jpg">-->
   </div>
  </div>
+ </div>
+ </div>
+ </div>
+ <footer>
+   <?php include("../plantillas/pie-pagina.inc.php");?>
+        </footer>
 </body>
+<script>
+
+</script>
 
 </html>    

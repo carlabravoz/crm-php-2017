@@ -1,4 +1,6 @@
+
 <?php
+session_start();
 ini_set("display_errors",1);
 //incorporamos la clase gestion
 include("../../clases/gestion.class.php");
@@ -21,9 +23,10 @@ $arrayCantidadGestiones=count($arrayGestiones);
      <!--   <link rel="stylesheet" type="text/css" href="../../css/estilos.css" > -->
     </head>
         <body>
+        <?php include("../../plantillas/encabezado.inc.php");?>
        
         <hr>
-        
+        <div class="ui segment">
         <form class="ui form " name="frm_listado" >
         <div class="ui segment">
         <h3 class="ui block header">LISTA DE GESTIONES<i class=></i></h3> 
@@ -39,8 +42,7 @@ $arrayCantidadGestiones=count($arrayGestiones);
         <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tipo Gestion</font></font></th>
         <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Resultado Gestión</font></font></th>
         <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Comentarios</font></font></th>
-        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fecha Actualización</font></font></th>
-        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Opciones</font></font></th>
+         <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Opciones</font></font></th>
         
         </tr>
        <thead>
@@ -59,7 +61,7 @@ $arrayCantidadGestiones=count($arrayGestiones);
         <td> <?php echo $arrayGestiones[$i][3];?></td>
         <td> <?php echo $arrayGestiones[$i][4];?></td>
         <td> <?php echo $arrayGestiones[$i][5];?></td>
-        <td> <?php echo $arrayGestiones[$i][6];?></td>
+       
        
 
         <!--enviamos variable por url-->
@@ -80,10 +82,14 @@ $arrayCantidadGestiones=count($arrayGestiones);
             <td><button class="ui primary basic button"><a href="agregar.php">Agregar gestion </a><i class="upload icon"></i></td>
         </tr>
         
-        
     
-     
         </table> 
         </form> 
+        </div>
+        </div>
+        </div>
+        <footer>
+   <?php include("../../plantillas/pie-pagina.inc.php");?>
+        </footer>
         </body>
         </html>
